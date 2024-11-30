@@ -31,3 +31,7 @@ jobs:
 
       - name: CAT
         run: cat ../docs/db.json
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: 'docs/db.json'
