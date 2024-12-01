@@ -29,9 +29,6 @@ jobs:
       - name: Create Database
         run: bash db.sh ../docs/db.json
 
-      - name: CAT
-        run: cat ../docs/db.json
-
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
@@ -43,6 +40,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      pages: write
     needs: build
     steps:
       - name: Deploy to GitHub Pages
