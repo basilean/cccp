@@ -207,7 +207,7 @@ function plan_apply() {
 			CACHE.finish = PLAN.pot[id].finish;
 		}
 	}
-	CACHE.total = ms2d(CACHE.finish.getTime() - CACHE.start.getTime());
+	CACHE.total = ms2d(CACHE.finish.getTime() - CACHE.start.getTime()) + 1;
 	var today = new Date(CACHE.start);
 	UI.plan.innerHTML = '';
 	const th = e_new('thead', {class: 'bg_dark'}, null, UI.plan);
