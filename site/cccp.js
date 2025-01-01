@@ -374,8 +374,8 @@ function pot_new() {
 		PLAN.pot[id][stage] = seed[stage].best
 	}
 	pot_start_calc(id);
-	pot_finish_calc(id);
 	pot_ui(id);
+	pot_finish_calc(id);
 }
 
 function pot_delete(e) {
