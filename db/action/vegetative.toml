@@ -1,0 +1,10 @@
+name = "Vegetative"
+image = "mising.png"
+tags = ["stage"]
+
+[help]
+en = """
+"""
+
+es = """
+"""

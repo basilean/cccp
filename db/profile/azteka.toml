@@ -1,0 +1,9 @@
+name = "Azteka"
+
+[[watering]]
+name = "deep_underground"
+[[watering]]
+name = "jiffy"
+
+[[flowering]]
+name = "wash"

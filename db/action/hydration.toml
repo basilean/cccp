@@ -1,0 +1,10 @@
+name = "Hydration"
+image = "missing.png"
+tags = ["stage"]
+
+[help]
+en = """
+"""
+
+es = """Agua no calcarea (hervida, filtrada?) con 1 gota de agua oxigenada.
+"""

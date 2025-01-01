@@ -1,0 +1,9 @@
+name = "Top Crop"
+image = "missing.png"
+
+[help]
+en = """Fertilizer
+"""
+
+es = """Fertilizantes naturales etc etc.
+"""

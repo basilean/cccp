@@ -1,0 +1,30 @@
+name = "Critical Haze (auto)"
+image = "default.png"
+thc = 16
+cbd = 1
+profiles = ["top_crop_auto"]
+
+[germination]
+min = 1
+max = 7
+best = 3
+
+[seedling]
+min = 14
+max = 21
+best = 17
+
+[vegetative]
+min = 0
+max = 0
+best = 0
+
+[transition]
+min = 7
+max = 14
+best = 10
+
+[flowering]
+min = 63
+max = 70
+best = 65

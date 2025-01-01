@@ -1,0 +1,39 @@
+/*
+	Andres Basile
+	GNU/GPL v3
+*/
+@media print {
+	.noprint {display: none;}
+}
+body {margin: 0px; font-family: sans;}
+table {border-spacing: 0px;}
+td, th {}
+tr {page-break-inside: avoid;}
+.hide {display: none !important;}
+.inline {display: inline-block; vertical-align: top;}
+.flex {display: inline-flex;}
+.bg_dark {background-color: #777;}
+.bg_light {background-color: #aaa;}
+.bg_lighter {background-color: #ddd;}
+.bg_green {background-color: #dfb;}
+.warn {background-color: yellow;}
+.row {height: 1.6rem; padding: 1px;}
+.logo {width: 10rem;}
+.date {width: 3rem;}
+.label {width: 6rem;}
+.value {width: 8rem;}
+.value select, .value input[type=text] {width: 7.4rem;}
+.right {text-align: right; padding-right: 3px;}
+.center {text-align: center;}
+.border_l {border-left: solid 2px #000;}
+.border_r {border-right: solid 2px #000;}
+.border_t {border-top: solid 2px #000;}
+.border_b {border-bottom: solid 2px #000;}
+.margin_l {margin-left: 3px;}
+.icon {font-size: smaller; margin-left: 3px; padding-left: 15px; background: left/12px no-repeat; line-height: 1;}
+.check {background-image: url('image/check.svg');}
+.germination {background-image: url('image/germination.svg');}
+.seedling {background-image: url('image/seedling.svg');}
+.vegetative {background-image: url('image/vegetative.svg');}
+.transition {background-image: url('image/transition.svg');}
+.flowering {background-image: url('image/flowering.svg');}

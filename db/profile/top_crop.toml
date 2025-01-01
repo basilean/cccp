@@ -1,0 +1,91 @@
+name = "Top Crop"
+
+[[germination]]
+name = "hydration"
+start = 0
+
+[[germination]]
+name = "jiffy"
+start = 2
+
+[[seedling]]
+name = "deep_underground"
+start = 0
+repeat = 7
+end = -7
+
+[[vegetative]]
+name = "deep_underground_side"
+start = 0
+repeat = 7
+end = -7
+
+[[vegetative]]
+name = "top_veg"
+start = 2
+repeat = 7
+end = -5
+
+[[vegetative]]
+name = "barrier"
+start = 4
+repeat = 14
+end = -11
+
+[[vegetative]]
+name = "barrier_spray"
+start = 11
+repeat = 14
+end = -8
+
+[[transition]]
+name = "deep_underground_side"
+start = 0
+repeat = 7
+end = -7
+
+[[transition]]
+name = "top_veg"
+start = 2
+repeat = 7
+end = -5
+
+[[transition]]
+name = "barrier"
+start = 4
+repeat = 14
+end = -11
+
+[[transition]]
+name = "barrier_spray"
+start = 11
+repeat = 14
+end = -8
+
+[[flowering]]
+name = "deep_underground_side"
+start = 0
+repeat = 7
+end = -8
+
+[[flowering]]
+name = "top_bloom"
+start = 2
+repeat = 7
+end = -14
+
+[[flowering]]
+name = "barrier"
+start = 4
+repeat = 14
+end = -11
+
+[[flowering]]
+name = "barrier_spray"
+start = 11
+repeat = 14
+end = -8
+
+[[flowering]]
+name = "wash"
+start = -7

@@ -1,0 +1,10 @@
+name = "Seedling"
+image = "seedling.svg"
+tags = ["stage"]
+
+[help]
+en = """
+"""
+
+es = """
+"""

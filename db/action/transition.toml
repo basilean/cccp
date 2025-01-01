@@ -1,0 +1,10 @@
+name = "Transition"
+image = "mising.png"
+tags = ["stage"]
+
+[help]
+en = """
+"""
+
+es = """
+"""

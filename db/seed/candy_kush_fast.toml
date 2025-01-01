@@ -1,0 +1,30 @@
+name = "Candy Kush (fast)"
+image = "default.png"
+thc = 18
+cbd = 1
+profiles = ["top_crop", "azteka"]
+
+[germination]
+min = 1
+max = 3
+best = 2
+
+[seedling]
+min = 7
+max = 21
+best = 17
+
+[vegetative]
+min = 1
+max = 56
+best = 28
+
+[transition]
+min = 7
+max = 21
+best = 14
+
+[flowering]
+min = 49
+max = 63
+best = 56

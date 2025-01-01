@@ -1,0 +1,10 @@
+name = "Harvest"
+image = "missing.png"
+tags = ["base"]
+
+[help]
+en = """
+"""
+
+es = """
+"""

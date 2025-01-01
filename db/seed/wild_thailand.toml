@@ -1,0 +1,30 @@
+name = "Wild Thailand"
+image = "default.png"
+thc = 22
+cbd = 1
+profiles = ["top_crop", "azteka"]
+
+[germination]
+min = 1
+max = 7
+best = 3
+
+[seedling]
+min = 14
+max = 21
+best = 17
+
+[vegetative]
+min = 14
+max = 56
+best = 28
+
+[transition]
+min = 7
+max = 14
+best = 7
+
+[flowering]
+min = 75
+max = 80
+best = 77

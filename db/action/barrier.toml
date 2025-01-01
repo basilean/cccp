@@ -1,0 +1,12 @@
+name = "Barrier"
+image = "missing.png"
+tags = ["top_crop"]
+
+[help]
+en = """0.5ml by a water liter.
+"""
+
+es = """Riego 0.5ml / Litro de agua.
+Una vez por semana.
+Evitar mezclar con productos de PH acido.
+"""

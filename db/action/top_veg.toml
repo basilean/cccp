@@ -1,0 +1,10 @@
+name = "Top Veg"
+image = "mising.png"
+tags = ["top_crop"]
+
+[help]
+en = """2-4ml by Liter.
+"""
+
+es = """
+"""
