@@ -2,6 +2,8 @@
 What if all of us could easily drop our experience in one place and then use it to plan a new season?  
 This community driven engine creates a calendar to daily follow and cross on the fridge's door.
 
+![CCCP](site/image/cccp.png)
+
 ## How it Works?
 * Read community driven database.
 * Set solstice date as central point to calculate everything else.
