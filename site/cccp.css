@@ -7,7 +7,6 @@
 }
 body {margin: 0px; font-family: sans;}
 table {border-spacing: 0px;}
-td, th {}
 tr {page-break-inside: avoid;}
 .hide {display: none !important;}
 .inline {display: inline-block; vertical-align: top;}

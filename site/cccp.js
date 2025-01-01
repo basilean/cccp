@@ -68,6 +68,10 @@ function solstice_next() {
 	return new Date((new Date().getFullYear()), 11, 21);
 }
 
+function i_name(table, id) {
+	return DB['idx_' + table][id] || id;
+}
+
 // DB
 function db_load(url) {
 	fetch(url).then(response => response.json()
@@ -208,11 +212,10 @@ function plan_apply() {
 	UI.plan.innerHTML = '';
 	const th = e_new('thead', {class: 'bg_dark'}, null, UI.plan);
 	const ph = e_new('tr', {}, null, th);
-	e_new('th', {class: 'date center border_t border_l border_b border_r'}, null, ph); // '\u00a0'
+	e_new('th', {class: 'date center border_t border_l border_b border_r'}, null, ph);
 	for (const id of Object.keys(PLAN.pot)) {
 		e_new('th', {class: 'value center border_t border_b border_r'}, id, ph);
 	}
-//	const tb = e_new('tbody', {class: 'table'}, null, UI.plan);
 	const pt = e_new('tbody', {}, null, UI.plan);
 	for (var i=0; i<CACHE.total; i++) {
 		var hide = true;
@@ -226,10 +229,8 @@ function plan_apply() {
 				if (actions && actions.length > 0) {
 					day.pot[id] = actions;
 					hide = false;
-		//			pc.classList.add('bg_light');
 					for (const action of actions) {
-						 // DB.idx_action[action]
-						const e = e_new('div', {class: 'icon'}, DB.idx_action[action] || action, pc);
+						const e = e_new('div', {class: 'icon'}, i_name('action', action), pc);
 						if (STAGES.includes(action)) {
 							e.classList.add(action);
 						}
@@ -237,9 +238,6 @@ function plan_apply() {
 							e.classList.add('check');
 						}
 					}
-				}
-				else {
-	//				pc.classList.add('bg_lighter');
 				}
 				count[id]++;
 			}
@@ -270,7 +268,7 @@ function plan_id(e) {
 		log('warn', `Plan name is empty.`);
 		return;
 	}
-	if (UI.plans.includes(id)) {
+	if (UI.plans.includes(id) && id != PLAN.id) {
 		e.classList.add('warn');
 		log('warn', `Plan name '${id}' already exists.`);
 		return;
@@ -374,8 +372,8 @@ function pot_new() {
 		PLAN.pot[id][stage] = seed[stage].best
 	}
 	pot_start_calc(id);
-	pot_ui(id);
 	pot_finish_calc(id);
+	pot_ui(id);
 }
 
 function pot_delete(e) {
@@ -391,13 +389,16 @@ function pot_id(e) {
 		log('warn', `Pot name is empty.`);
 		return;
 	}
-	if (PLAN.pot[id]) {
+	const old = pot_id_get(e);
+	if (PLAN.pot[id] && id != old) {
 		e.classList.add('warn');
 		log('warn', `Pot name '${id}' already exists.`);
 		return;
 	}
 	e.classList.remove('warn');
-	const old = pot_id_get(e);
+	if (id == old) {
+		return;
+	}
 	PLAN.pot[id] = PLAN.pot[old];
 	delete(PLAN.pot[old]);
 	PLAN.pot[id].name = id;
@@ -409,6 +410,7 @@ function pot_seed(e) {
 	const seed = DB.seed[e.value];
 	PLAN.pot[id].seed = e.value;
 	PLAN.pot[id].profile = seed.profiles[0];
+	pot_ui_profile(id);
 	for (const stage of STAGES) {
 		PLAN.pot[id][stage] = seed[stage].best;
 		UI.pot[id][stage].value = seed[stage].best;
@@ -417,6 +419,12 @@ function pot_seed(e) {
 	UI.pot[id].start.value = d2s(PLAN.pot[id].start);
 	pot_finish_calc(id);
 	UI.pot[id].finish.value = d2s(PLAN.pot[id].finish);
+	if(pot_is_auto(id)) {
+		UI.pot[id].start.disabled = false;
+	}
+	else {
+		UI.pot[id].start.disabled = true;
+	}
 }
 
 function pot_is_auto(id) {
@@ -463,11 +471,9 @@ function pot_finish_calc(id) {
 	var off = 0;
 	var stages = STAGES_POST;
 	var start = PLAN.solstice.getTime();
-	UI.pot[id].start.disabled = true;
 	if (pot_is_auto(id)) { // AUTO
 		stages = STAGES;
 		start = PLAN.pot[id].start.getTime();
-		UI.pot[id].start.disabled = false;
 	}
 	for (const stage of stages) {
 		off += PLAN.pot[id][stage];
