@@ -1,21 +1,21 @@
 # Cannabis Computer Club Planner
-What if all of us could easily drop our experience in one place and then use it to plan a new season?  
-This community driven engine creates a calendar to daily follow and cross on the fridge's door.
+[LIVE](https://basile.ar/cccp/)  
+A online tool to create best growing calendar using community experience.  
+What if all of us could easily drop our experience in one place and then use it to plan a new season?
 
 ![CCCP](site/image/cccp.png)
 
 ## How it Works?
-* Read community driven database.
 * Set solstice date as central point to calculate everything else.
-> It changes from south to north of equator line.
-> It announces vegetative transition to flowering.
-> Indoor it would be when lights change to 12/12.
+> It changes from south to north of equator line.  
+> It announces vegetative transition to flowering.  
+> Indoor it would be when lights change to 12/12.  
 * Add one or more pots.
-  * Select a seed.
-  * Best stages times.
+  * Select a strain.
+  * Set best stages times.
   * Adjust transition if needed.
   * Select a profile.
-  * Start time can be adjusted for auto (vegetative == 0).
+  * Set start time if auto (vegetative == 0).
 * Apply to calculate an optimal schedule.
 
 ## Knowledge Base
