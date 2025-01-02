@@ -4,6 +4,7 @@
 */
 @media print {
 	.noprint {display: none;}
+	.date {width: 3rem;}
 }
 body {margin: 0px; font-family: sans;}
 table {border-spacing: 0px;}
@@ -18,17 +19,18 @@ tr {page-break-inside: avoid;}
 .warn {background-color: yellow;}
 .row {height: 1.6rem; padding: 1px;}
 .logo {width: 10rem;}
-.date {width: 3rem;}
+.date {width: 6rem;}
 .label {width: 6rem;}
-.value {width: 8rem;}
+.value {width: 8.2rem;}
 .value select, .value input[type=text] {width: 7.4rem;}
-.right {text-align: right; padding-right: 3px;}
+.right {text-align: right;}
 .center {text-align: center;}
 .border_l {border-left: solid 2px #000;}
 .border_r {border-right: solid 2px #000;}
 .border_t {border-top: solid 2px #000;}
 .border_b {border-bottom: solid 2px #000;}
 .margin_l {margin-left: 3px;}
+.padding_r {padding-right: 3px;}
 .icon {font-size: smaller; margin-left: 3px; padding-left: 15px; background: left/12px no-repeat; line-height: 1;}
 .check {background-image: url('image/check.svg');}
 .germination {background-image: url('image/germination.svg');}

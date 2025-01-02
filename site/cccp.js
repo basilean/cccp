@@ -95,7 +95,7 @@ function plan_ui() {
 	const menu_but = e_new('div', {class: 'inline row'}, null, menu);
 	UI.new = e_new('button', {class: '', onclick: 'plan_new();'}, 'New', menu_but);
 	UI.load = e_new('select', {class: 'margin_l', onchange: 'plan_load(this);'}, null, menu_but);
-	const plan = e_new('div', {class: 'border_t bg_light noprint'});
+	const plan = e_new('div', {class: 'border_t border_b bg_light noprint'});
 	e_new('div', {class: 'inline row label right'}, 'plan', plan);
 	const plan_but = e_new('div', {class: 'inline row'}, null, plan);
 	UI.name = e_new('input', {class: 'margin_l', size: 8, oninput: 'plan_id(this);'}, null, plan_but);
@@ -105,24 +105,24 @@ function plan_ui() {
 	e_new('div', {class: 'inline row label right'}, 'solstice', solstice);
 	const t = e_new('div', {class: 'inline row value center'}, null, solstice);
 	UI.solstice = e_new('input', {type: 'date', onchange: 'plan_solstice(this);'}, null, t);
-	const header = e_new('div', {class: 'bg_light noprint'});
-	const label = e_new('div', {class: 'inline border_r'}, null, header);
-	const add = e_new('div', {class: 'row label right pad_r'}, null, label);
-	e_new('button', {onclick: 'pot_new();'}, 'Add', add);
-	e_new('div', {class: 'row label right pad_r'}, 'pot', label);
-	e_new('div', {class: 'row label right pad_r'}, 'seed', label);
-	for (const key of STAGES) {
-		e_new('div', {class: 'row label right pad_r'}, key, label);
-	}
-	e_new('div', {class: 'row label right pad_r'}, 'profile', label);
-	e_new('div', {class: 'row label right pad_r'}, 'start', label);
-	e_new('div', {class: 'row label right pad_r'}, 'finish', label);
-	UI.pots = e_new('div', {class: 'inline bg_lighter'}, null, header);
-	UI.pot = {};
-	const action = e_new('div', {class: 'border_b bg_light noprint'});
-	const action_but = e_new('div', {class: 'row logo center'}, null, action);
+//	const action = e_new('div', {class: 'border_b bg_light noprint'});
+	const action_but = e_new('div', {class: 'inline row'}, null, solstice);
 	UI.apply = e_new('button', {class: '', onclick: 'plan_apply();'}, 'Apply', action_but);
 	UI.print = e_new('button', {class: 'margin_l', onclick: 'window.print();'}, 'Print', action_but);
+	const header = e_new('div', {class: 'noprint'});
+	const label = e_new('div', {class: 'inline bg_light border_r border_b'}, null, header);
+	const add = e_new('div', {class: 'row label right padding_r'}, null, label);
+	e_new('button', {onclick: 'pot_new();'}, 'Add', add);
+	e_new('div', {class: 'row label right padding_r'}, 'pot', label);
+	e_new('div', {class: 'row label right padding_r'}, 'seed', label);
+	for (const key of STAGES) {
+		e_new('div', {class: 'row label right padding_r'}, key, label);
+	}
+	e_new('div', {class: 'row label right padding_r'}, 'profile', label);
+	e_new('div', {class: 'row label right padding_r'}, 'start', label);
+	e_new('div', {class: 'row label right padding_r'}, 'finish', label);
+	UI.pots = e_new('div', {class: 'inline bg_lighter'}, null, header);
+	UI.pot = {};
 	UI.plan = e_new('table', {});
 }
 
@@ -295,16 +295,16 @@ function pot_ui(id) {
 	}
 	const sdb = DB.seed[PLAN.pot[id].seed];
 	UI.pot[id] = {};
-	const pot = e_new('div', {class: 'inline border_r', 'data-name': id}, null, UI.pots);
-	const del = e_new('div', {class: 'row value right'}, null, pot);
+	const pot = e_new('div', {class: 'inline border_b', 'data-name': id}, null, UI.pots);
+	const del = e_new('div', {class: 'row value right  border_r'}, null, pot);
 	e_new('button', {onclick: 'pot_delete(this)'}, 'Del', del);
-	const name = e_new('div', {class: 'row value center'}, null, pot);
+	const name = e_new('div', {class: 'row value center border_r'}, null, pot);
 	UI.pot[id].name = e_new('input', {value: id, oninput: 'pot_id(this);', size: 8}, null, name);
-	const seed = e_new('div', {class: 'row value center'}, null, pot);
+	const seed = e_new('div', {class: 'row value center border_r'}, null, pot);
 	UI.pot[id].seed = e_new('select', {onchange: 'pot_seed(this);'}, null, seed);
 	pot_ui_seed(id);
 	for (const key of STAGES) {
-		const div = e_new('div', {class: 'row value center'}, null, pot);
+		const div = e_new('div', {class: 'row value center border_r'}, null, pot);
 		if (!sdb[key]) {
 			log('error', `Stage '${key}' missing on seed '${opt.seed}'.`);
 			continue;
@@ -318,15 +318,15 @@ function pot_ui(id) {
 			onchange: "pot_update(this);"
 		}, null, div);
 	}
-	const profile = e_new('div', {class: 'row value center'}, null, pot);
+	const profile = e_new('div', {class: 'row value center border_r'}, null, pot);
 	UI.pot[id].profile = e_new('select', {onchange: 'pot_profile(this);'}, null, profile);
 	pot_ui_profile(id);
-	const start = e_new('div', {class: 'row value center'}, null, pot);
+	const start = e_new('div', {class: 'row value center border_r'}, null, pot);
 	UI.pot[id].start = e_new('input', {disabled: true, onchange: 'pot_start(this);', type: 'date', value: d2s(PLAN.pot[id].start)}, null, start);
 	if(pot_is_auto(id)) {
 		UI.pot[id].start.disabled = false;
 	}
-	const finish = e_new('div', {class: 'row value center'}, null, pot);
+	const finish = e_new('div', {class: 'row value center border_r'}, null, pot);
 	UI.pot[id].finish = e_new('input', {disabled: true, type: 'date', value: d2s(PLAN.pot[id].finish )}, null, finish);
 }
 
